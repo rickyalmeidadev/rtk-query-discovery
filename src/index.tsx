@@ -1,7 +1,7 @@
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
-import { TodosList } from './modules/todos/components';
-import store from './store';
+import { TodosList } from '~/modules/todos/components';
+import store from '~/store';
 
 const App = () => (
   <Provider store={store}>

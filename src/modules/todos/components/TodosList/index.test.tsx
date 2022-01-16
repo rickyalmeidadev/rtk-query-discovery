@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import { render } from '@testing-library/react-native';
 import { rest } from 'msw';
 import { server } from '../../../../mocks/server';
-import { todos } from '../../../../mocks/todos';
-import { makeStore } from '../../../../store';
+import { todos } from '~/mocks/todos';
+import { makeStore } from '~/store';
 import { TodosList } from './';
 
 type Props = {
@@ -44,7 +44,7 @@ it('renders the error message', async () => {
   expect(element).toBeTruthy();
 });
 
-it('strike through the completed todos', async () => {
+it('crosses out completed todos', async () => {
   const screen = render(<TodosList />, { wrapper });
   const slice = todos.slice(0, 10);
   const promises = slice

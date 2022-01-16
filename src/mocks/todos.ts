@@ -1,4 +1,4 @@
-import { Todo } from '../modules/todos/types';
+import { Todo } from '~/modules/todos/types';
 
 export const todos: Todo[] = [
   {
