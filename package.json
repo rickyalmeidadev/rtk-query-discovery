@@ -8,8 +8,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest --forceExit",
-    "test:coverage": "jest --coverage --forceExit && xdg-open coverage/lcov-report/index.html",
+    "test": "jest",
+    "test:coverage": "jest --coverage && open coverage/lcov-report/index.html",
     "test:watch": "jest --watch"
   },
   "dependencies": {

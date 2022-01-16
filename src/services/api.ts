@@ -5,6 +5,7 @@ const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://jsonplaceholder.typicode.com/',
   }),
+  keepUnusedDataFor: process.env.NODE_ENV !== 'test' ? 60 : 0,
   endpoints: () => {
     return {
       /* empty for code splitting */
