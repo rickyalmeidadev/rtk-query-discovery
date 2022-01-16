@@ -9,7 +9,8 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "test": "jest",
-    "test:watch": "jest --coverage=false --detectOpenHandles --runInBand --watch"
+    "test:coverage": "jest --coverage && open coverage/lcov-report/index.html",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",

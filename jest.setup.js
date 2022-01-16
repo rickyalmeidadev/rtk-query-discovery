@@ -9,8 +9,10 @@ global.Headers = Headers;
 global.Request = Request;
 global.Response = Response;
 
+const noop = () => {};
+
 beforeAll(() => {
-  jest.spyOn(console, 'error').mockImplementation(() => {});
+  jest.spyOn(console, 'error').mockImplementation(noop);
   server.listen();
 });
 
