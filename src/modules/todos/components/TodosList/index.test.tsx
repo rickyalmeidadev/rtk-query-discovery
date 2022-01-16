@@ -5,7 +5,7 @@ import { rest } from 'msw';
 import { server } from '../../../../mocks/server';
 import { todos } from '../../../../mocks/todos';
 import { makeStore } from '../../../../store';
-import { TodosList } from '.';
+import { TodosList } from './';
 
 type Props = {
   children: ReactNode;
