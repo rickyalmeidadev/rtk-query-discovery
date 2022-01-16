@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native';
-import { useGetTodosQuery } from '../../hooks';
-import { Todo } from '../../types';
+import { useGetTodosQuery } from '../hooks';
+import { Todo } from '../types';
 
 const keyExtractor = (todo: Todo) => todo.id.toString();
 

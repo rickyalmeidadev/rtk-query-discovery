@@ -2,10 +2,10 @@ import { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 import { render } from '@testing-library/react-native';
 import { rest } from 'msw';
-import { server } from '../../../../mocks/server';
+import { server } from '~/mocks/server';
 import { todos } from '~/mocks/todos';
 import { makeStore } from '~/store';
-import { TodosList } from './';
+import { TodosList } from './TodosList';
 
 type Props = {
   children: ReactNode;
