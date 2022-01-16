@@ -3,7 +3,7 @@ import { Todo } from './types';
 
 const todos = api.injectEndpoints({
   endpoints: build => ({
-    getTodos: build.query<Todo, void>({
+    getTodos: build.query<Todo[], void>({
       query: () => '/todos',
     }),
   }),
