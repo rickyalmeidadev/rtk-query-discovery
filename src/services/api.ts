@@ -7,7 +7,7 @@ const api = createApi({
   }),
   endpoints: () => {
     return {
-      /* empty */
+      /* empty for code splitting */
     };
   },
 });

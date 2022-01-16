@@ -40,6 +40,20 @@ it('renders the error message', async () => {
     ),
   );
   const screen = render(<TodosList />, { wrapper });
-  const element = await screen.findByText(message);
+  const element = await screen.findByText(new RegExp(message, 'i'));
   expect(element).toBeTruthy();
+});
+
+it('strike through the completed todos', async () => {
+  const screen = render(<TodosList />, { wrapper });
+  const slice = todos.slice(0, 10);
+  const promises = slice
+    .slice(0, 10)
+    .map(todo => screen.findByText(new RegExp(todo.title, 'i')));
+  const elements = await Promise.all(promises);
+  elements.forEach((element, index) => {
+    expect(element).toHaveStyle({
+      textDecorationLine: slice[index].completed ? 'line-through' : 'none',
+    });
+  });
 });
