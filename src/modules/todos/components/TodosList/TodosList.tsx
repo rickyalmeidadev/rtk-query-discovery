@@ -5,12 +5,15 @@ import { Todo } from '../../types';
 const keyExtractor = (todo: Todo) => todo.id.toString();
 
 export const TodosList = () => {
-  const { data } = useGetTodosQuery();
+  const { data, error, isError } = useGetTodosQuery();
 
   return (
     <FlatList
       data={data}
       keyExtractor={keyExtractor}
+      ListEmptyComponent={
+        isError ? <Text>{(error as any).data.message}</Text> : null
+      }
       renderItem={({ item: todo }: { item: Todo }) => (
         <View>
           <Text
