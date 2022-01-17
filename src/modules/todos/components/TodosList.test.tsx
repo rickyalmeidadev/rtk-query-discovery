@@ -4,6 +4,7 @@ import { render } from '@testing-library/react-native';
 import { rest } from 'msw';
 import { server } from '~/mocks/server';
 import { todos } from '~/mocks/todos';
+import { BASE_URL } from '~/services/api';
 import { makeStore } from '~/store';
 import { TodosList } from './TodosList';
 
@@ -30,13 +31,11 @@ it('renders the fetched todos', async () => {
 it('renders the error message', async () => {
   const message = 'Something went wrong';
   server.use(
-    rest.get(
-      'https://jsonplaceholder.typicode.com/todos',
-      (request, response, context) =>
-        response(
-          context.status(500),
-          context.json({ message: 'Something went wrong' }),
-        ),
+    rest.get(`${BASE_URL}/todos`, (request, response, context) =>
+      response(
+        context.status(500),
+        context.json({ message: 'Something went wrong' }),
+      ),
     ),
   );
   const screen = render(<TodosList />, { wrapper });
